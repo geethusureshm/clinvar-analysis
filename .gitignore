@@ -1,0 +1,6 @@
+data/
+*.vcf
+*.vcf.gz
+*.csi
+*.RData
+*.Rhistory

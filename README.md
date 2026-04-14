@@ -27,3 +27,70 @@ These genes are associated with retinal diseases, cancer, and cardiac disorders.
 - gene_counts.csv
 - top_genes.png
 
+---
+
+---
+
+## Functional Enrichment Analysis
+
+To further understand the biological significance of the identified genes, functional enrichment analysis was performed.
+
+### Gene Ontology (GO)
+
+Enriched biological processes include:
+
+- Regulation of immune effector process
+- Humoral immune response
+- Complement activation
+- Heart contraction and cardiac conduction
+
+---
+
+### KEGG Pathways
+
+Top enriched pathways:
+
+- Complement and coagulation cascades
+- Pathways in cancer
+- Thyroid hormone signaling
+- Peroxisome
+
+---
+
+## Gene–Pathway Relationships
+
+Gene-level mapping revealed that multiple genes contribute to key biological pathways:
+
+- Immune-related pathways (complement system)
+- Cardiovascular pathways (heart contraction)
+- Disease pathways (cancer and metabolism)
+
+Some genes participate in multiple pathways, indicating their central role in disease mechanisms.
+
+---
+
+## Results (Extended Analysis)
+
+### Enrichment Files
+- results/go_enrichment.csv
+- results/kegg_enrichment.csv
+
+### Gene–Pathway Mapping
+- results/gene_pathway_mapping.csv
+
+### Figures
+- figures/go_enrichment_plot.png
+- figures/kegg_enrichment_plot.png
+- figures/gene_pathway_network.png
+
+---
+
+## Biological Interpretation
+
+Functional enrichment analysis revealed that ClinVar pathogenic variants are strongly associated with immune system regulation, cardiovascular function, and disease-related pathways. The enrichment of complement and coagulation cascades highlights the importance of immune and inflammatory mechanisms. Cardiac-related pathways indicate variants affecting heart function, while cancer-related pathways suggest roles in genomic instability and DNA repair.
+
+---
+
+## Summary
+
+This integrative analysis highlights the functional landscape of pathogenic variants and provides insight into the molecular mechanisms underlying human diseases.

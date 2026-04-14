@@ -94,3 +94,37 @@ Functional enrichment analysis revealed that ClinVar pathogenic variants are str
 ## Summary
 
 This integrative analysis highlights the functional landscape of pathogenic variants and provides insight into the molecular mechanisms underlying human diseases.
+Neuro Gene Prioritization and Network Analysis
+
+To investigate the neurological relevance of pathogenic variants, neuro-related Gene Ontology (GO) terms were extracted and associated genes were analyzed.
+
+Top Neuro Genes
+NGF
+PARK7
+PINK1
+NTRK1
+DOCK7
+DISC1
+
+These genes showed high frequency across neuro-related pathways, indicating their central role in neuronal processes.
+
+Gene–Disease Associations
+
+Key genes were mapped to known rare neurological disorders:
+
+PINK1, PARK7 → Parkinson’s disease
+NTRK1 → Congenital insensitivity to pain
+DOCK7 → Epileptic encephalopathy
+MFSD2A → Microcephaly syndrome
+Network Analysis
+
+A gene–pathway network was constructed to identify hub genes.
+
+Hub genes identified:
+
+NGF
+PINK1
+PARK7
+NTRK1
+
+These genes showed high connectivity, suggesting their importance in neurodegeneration and neuronal signaling.

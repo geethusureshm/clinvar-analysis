@@ -1,130 +1,120 @@
 # ClinVar Pathogenic Variant Analysis (Chromosome 1)
 
-## Objective
-To analyze pathogenic variants from ClinVar and identify key disease-associated genes.
+## Overview
+This project identifies rare disease-associated genes by integrating ClinVar pathogenic variants with functional enrichment, network analysis, and population-aware prioritization.
+
+---
+
+## Objectives
+- Extract pathogenic variants from ClinVar
+- Map variants to genes
+- Identify biologically relevant pathways
+- Prioritize rare neuro-associated candidate genes
+- Infer gene–disease associations
+
+---
 
 ## Workflow
-1. Download ClinVar VCF
-2. Extract chromosome 1 variants
-3. Filter pathogenic variants
-4. Extract gene names
-5. Identify top genes
 
-## Key Findings
-Top genes:
-- USH2A
-- ABCA4
-- MUTYH
-- RYR2
+### 1. Variant Extraction
+- Source: ClinVar VCF (GRCh38)
+- Filter: Pathogenic variants
+- Chromosome: 1
 
-These genes are associated with retinal diseases, cancer, and cardiac disorders.
+### 2. Variant–Gene Mapping
+- Extracted gene annotations
+- Cleaned multi-gene entries
+- Generated gene frequency table
 
-## Tools Used
-- bcftools
-- R (vcfR package)
+### 3. Functional Enrichment
+- Tool: Enrichr
+- Databases:
+  - GO Biological Process
+  - KEGG Pathways
 
-## Output
-- gene_counts.csv
-- top_genes.png
+### 4. Neuro-Specific Filtering
+- Selected pathways related to:
+  - Neurodevelopment
+  - Neurodegeneration
+  - Brain function
 
----
-
----
-
-## Functional Enrichment Analysis
-
-To further understand the biological significance of the identified genes, functional enrichment analysis was performed.
-
-### Gene Ontology (GO)
-
-Enriched biological processes include:
-
-- Regulation of immune effector process
-- Humoral immune response
-- Complement activation
-- Heart contraction and cardiac conduction
+### 5. Network Analysis
+- Constructed gene–pathway network
+- Identified hub genes
 
 ---
 
-### KEGG Pathways
+## 🔬 Version 2 Update (Key Contribution)
 
-Top enriched pathways:
+### Population-Aware Prioritization
+- Gene frequency used as a proxy for rarity
+- Low-frequency genes prioritized as rare disease candidates
 
-- Complement and coagulation cascades
-- Pathways in cancer
-- Thyroid hormone signaling
-- Peroxisome
+### Automated Gene–Disease Mapping
+- Derived from KEGG pathway associations
+- Generated gene–disease relationships programmatically
 
----
-
-## Gene–Pathway Relationships
-
-Gene-level mapping revealed that multiple genes contribute to key biological pathways:
-
-- Immune-related pathways (complement system)
-- Cardiovascular pathways (heart contraction)
-- Disease pathways (cancer and metabolism)
-
-Some genes participate in multiple pathways, indicating their central role in disease mechanisms.
+### Final Candidate Selection
+- Integrated:
+  - Neuro enrichment
+  - Variant frequency
+  - Pathway mapping
 
 ---
 
-## Results (Extended Analysis)
+## Key Results
 
-### Enrichment Files
-- results/go_enrichment.csv
-- results/kegg_enrichment.csv
+### Top Candidate Genes
+- APP
+- NRXN1
+- SHANK3
+- CDK5
+- MEF2C
+- WNT5A
 
-### Gene–Pathway Mapping
-- results/gene_pathway_mapping.csv
+### Biological Insights
+- Neurodegeneration: APP, CDK5
+- Synaptic/Psychiatric: NRXN1, SHANK3
+- Neurodevelopment: MEF2C, WNT5A
+
+---
+
+## Outputs
+
+### Data
+- `results/v2_population/final_rare_neuro_genes.csv`
+- `results/v2_population/final_gene_disease_table.csv`
+- `results/v2_population/auto_gene_disease_from_kegg.csv`
+- `results/v2_population/final_gene_disease_collapsed.csv`
 
 ### Figures
-- figures/go_enrichment_plot.png
-- figures/kegg_enrichment_plot.png
-- figures/gene_pathway_network.png
+- Neuro gene network
+- Hub gene network
 
 ---
 
-## Biological Interpretation
+## Conclusion
 
-Functional enrichment analysis revealed that ClinVar pathogenic variants are strongly associated with immune system regulation, cardiovascular function, and disease-related pathways. The enrichment of complement and coagulation cascades highlights the importance of immune and inflammatory mechanisms. Cardiac-related pathways indicate variants affecting heart function, while cancer-related pathways suggest roles in genomic instability and DNA repair.
+This study demonstrates that pathogenic variants converge on key neurological pathways. A population-aware filtering strategy enables prioritization of rare, disease-relevant genes.
 
 ---
 
-## Summary
+## Limitations
+- Population frequency inferred indirectly
+- No direct integration of large-scale datasets (e.g., gnomAD)
 
-This integrative analysis highlights the functional landscape of pathogenic variants and provides insight into the molecular mechanisms underlying human diseases.
-Neuro Gene Prioritization and Network Analysis
+---
 
-To investigate the neurological relevance of pathogenic variants, neuro-related Gene Ontology (GO) terms were extracted and associated genes were analyzed.
+## Future Directions
+- Integrate population allele frequencies from large datasets
+- Extend to genome-wide analysis
+- Incorporate transcriptomic validation
 
-Top Neuro Genes
-NGF
-PARK7
-PINK1
-NTRK1
-DOCK7
-DISC1
+---
 
-These genes showed high frequency across neuro-related pathways, indicating their central role in neuronal processes.
-
-Gene–Disease Associations
-
-Key genes were mapped to known rare neurological disorders:
-
-PINK1, PARK7 → Parkinson’s disease
-NTRK1 → Congenital insensitivity to pain
-DOCK7 → Epileptic encephalopathy
-MFSD2A → Microcephaly syndrome
-Network Analysis
-
-A gene–pathway network was constructed to identify hub genes.
-
-Hub genes identified:
-
-NGF
-PINK1
-PARK7
-NTRK1
-
-These genes showed high connectivity, suggesting their importance in neurodegeneration and neuronal signaling.
+## Repository Structure
+data/ # Raw data (ClinVar, population)
+scripts/ # Analysis scripts
+results/ # Output files
+figures/ # Visualizations
+docs/ # Documentation

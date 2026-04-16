@@ -4,3 +4,6 @@ data/
 *.csi
 *.RData
 *.Rhistory
+.Rhistory
+.RData
+*.Zone.Identifier
